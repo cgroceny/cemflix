@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1920, height=1080, user-scalable=no">
+  <title>Cemflix</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/theme-light.css">
+  <script src="$WEBAPIS/webapis/webapis.js"></script>
+  <script>
+  /* PC/tarayici icin: 1920x1080 duzeni pencereye sigdir (TV'de devre disi). */
+  (function () {
+    if (typeof window.tizen !== 'undefined') return;
+    var W = 1920, H = 1080, s = 1, ox = 0, oy = 0;
+    var origRect = Element.prototype.getBoundingClientRect;
+    // nav.js piksel konumlarini olcer; olcekliyken 1920x1080 koordinatlarina cevir.
+    Element.prototype.getBoundingClientRect = function () {
+      var r = origRect.call(this);
+      if (s === 1 && ox === 0 && oy === 0) return r;
+      var l = (r.left - ox) / s, t = (r.top - oy) / s, w = r.width / s, h = r.height / s;
+      return { left: l, top: t, right: l + w, bottom: t + h, width: w, height: h, x: l, y: t };
+    };
+    function fit() {
+      var b = document.body, de = document.documentElement;
+      if (!b) return;
+      var vw = window.innerWidth, vh = window.innerHeight;
+      s = Math.min(vw / W, vh / H);
+      ox = Math.max(0, (vw - W * s) / 2); oy = Math.max(0, (vh - H * s) / 2);
+      if (Math.abs(s - 1) < 0.001 && ox < 1 && oy < 1) { s = 1; ox = 0; oy = 0; }
+      de.style.width = Math.max(vw, 1) + 'px'; de.style.height = Math.max(vh, 1) + 'px';
+      b.style.webkitTransformOrigin = b.style.transformOrigin = '0 0';
+      b.style.webkitTransform = b.style.transform =
+        (s === 1 && !ox && !oy) ? '' : 'translate(' + ox + 'px,' + oy + 'px) scale(' + s + ')';
+    }
+    document.addEventListener('DOMContentLoaded', fit);
+    window.addEventListener('resize', fit);
+  })();
+  </script>
+</head>
+<body>
+  <div id="video-layer"></div>
+  <div id="app">
+    <div id="topbar" class="hidden"></div>
+    <div id="screens"></div>
+  </div>
+  <div id="modals"></div>
+  <div id="loader"><div class="spin"></div><div id="loader-text"></div></div>
+  <div id="toast"></div>
+  <div id="hints"></div>
+  <div id="splash"><div class="sp-glow"></div></div>
+  <script src="js/util.js"></script>
+  <script src="js/brand.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/qrcode.js"></script>
+  <script src="js/nacl-fast.min.js"></script>
+  <script src="js/qrlogin.js"></script>
+  <script src="js/player.js"></script>
+  <script src="js/screens.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

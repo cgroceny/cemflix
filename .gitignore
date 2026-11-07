@@ -1,0 +1,28 @@
+# Kişisel / yerel dosyalar (KUR-Cemflix.bat üretir)
+tv-ip.txt
+profil.txt
+kurulum-log.txt
+NOTLAR-yerel.txt
+
+# Tizen paketleme çıktıları (her imzalamada yeniden oluşur)
+*.wgt
+app/.manifest.tmp
+app/author-signature.xml
+app/signature*.xml
+.buildResult/
+.sign/
+
+# Sertifikalar asla depoya girmez
+*.p12
+*.pfx
+
+# Telefon QR sayfası ayrı depoda: github.com/cgroceny/cemflix-qr
+qr-web/
+
+# Araçlar
+__pycache__/
+*.pyc
+.vscode/
+.idea/
+Thumbs.db
+desktop.ini

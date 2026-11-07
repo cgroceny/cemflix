@@ -1,0 +1,150 @@
+/* =====================================================================
+   AÇIK TEMA — body.light (oynatıcı her zaman koyu kalır)
+   Palet: zemin #f3f0eb · kart #ffffff · yazı #171a21 · ikincil #4a5160 · soluk #7a8291 · vurgu #ff7a14 / metin vurgusu #d35c00
+   ===================================================================== */
+body.light { background: #f3f0eb; color: #171a21; }
+body.light:not(.playing) #app { background: #f3f0eb;
+  background: -webkit-radial-gradient(12% -8%, ellipse, rgba(255,138,42,.16) 0, rgba(243,240,235,0) 48%), -webkit-radial-gradient(100% 100%, ellipse, rgba(90,120,200,.10) 0, rgba(243,240,235,0) 50%), #f3f0eb;
+  background: radial-gradient(ellipse at 12% -8%, rgba(255,138,42,.16) 0, rgba(243,240,235,0) 48%), radial-gradient(ellipse at 100% 100%, rgba(90,120,200,.10) 0, rgba(243,240,235,0) 50%), #f3f0eb; color: #171a21; }
+body.light:not(.playing) .muted, body.light:not(.playing) .empty { color: #7a8291; }
+
+/* logo */
+body.light #topbar .word, body.light .login-logo .word { color: #171a21; }
+body.light #topbar .mk-play path, body.light .login-logo .mk-play path { fill: #171a21; }
+
+/* üst menü */
+body.light:not(.playing) #topbar {
+  background: -webkit-linear-gradient(top, rgba(243,240,235,.97), rgba(243,240,235,.8) 70%, rgba(243,240,235,0));
+  background: linear-gradient(to bottom, rgba(243,240,235,.97), rgba(243,240,235,.8) 70%, rgba(243,240,235,0)); }
+body.light .tab { color: #4a5160; }
+body.light .tab.active { color: #171a21; }
+body.light .tab.focused, body.light .prof-chip.focused { background: #171a21; color: #fff; }
+body.light .clock { color: #2a2f3a; }
+body.light .acc-days { background: rgba(23,26,33,.07); color: #4a5160; }
+body.light .acc-days.warn { background: #ff6b6b; color: #fff; }
+body.light .prof-chip { color: #2a2f3a; }
+
+/* ortak öğeler */
+body.light:not(.playing) .btn { background: rgba(23,26,33,.08); color: #171a21; }
+body.light:not(.playing) .btn.primary { color: #1b0f04;
+  background: -webkit-linear-gradient(top, #ffa04d, #ff7a14); background: linear-gradient(to bottom, #ffa04d, #ff7a14); }
+body.light:not(.playing) .btn.focused, body.light:not(.playing) .btn.primary.focused { background: #171a21; color: #fff; box-shadow: 0 0 0 4px rgba(255,122,20,.55), 0 12px 30px rgba(23,26,33,.25); }
+body.light:not(.playing) .btn.danger { color: #d23b3b; }
+body.light:not(.playing) .li { color: #3a404c; }
+body.light:not(.playing) .li.special { color: #d35c00; }
+body.light:not(.playing) .li.sel { background: rgba(255,122,20,.13); color: #171a21; }
+body.light:not(.playing) .li.focused, body.light:not(.playing) .ch.focused, body.light:not(.playing) .set-row.focused { background: #171a21; color: #fff; box-shadow: 0 8px 22px rgba(23,26,33,.22); }
+body.light:not(.playing) .seg { background: rgba(23,26,33,.07); color: #3a404c; }
+body.light:not(.playing) .seg.sel { background: rgba(255,122,20,.18); color: #171a21; }
+body.light:not(.playing) .seg.focused { background: #171a21; color: #fff; }
+body.light .spin { border-color: rgba(23,26,33,.1); border-top-color: #ff7a14; }
+
+/* kartlar ve satırlar */
+body.light:not(.playing) .poster { background: #e4ded5; box-shadow: 0 8px 22px rgba(23,26,33,.12); }
+body.light:not(.playing) .ph { color: rgba(23,26,33,.2); background: -webkit-linear-gradient(135deg, #ebe5dc, #d9d1c5); background: linear-gradient(135deg, #ebe5dc, #d9d1c5); }
+body.light:not(.playing) .poster:before { box-shadow: inset 0 0 0 1px rgba(23,26,33,.08); }
+body.light:not(.playing) .card.focused .poster { box-shadow: 0 0 0 4px #171a21, 0 0 0 10px rgba(255,122,20,.5), 0 22px 44px rgba(23,26,33,.3); }
+body.light:not(.playing) .ctitle { color: #4a5160; }
+body.light:not(.playing) .card.focused .ctitle { color: #171a21; }
+body.light:not(.playing) .card.skeleton { background: #e7e1d8;
+  background: -webkit-linear-gradient(left, #e7e1d8 0, #f5f1ea 40%, #e7e1d8 80%); background: linear-gradient(to right, #e7e1d8 0, #f5f1ea 40%, #e7e1d8 80%); background-size: 600px 100%; }
+body.light:not(.playing) .card.more .poster { background: #ece6dd; border-color: rgba(23,26,33,.2); }
+body.light:not(.playing) .more-in { color: #3a404c; }
+body.light:not(.playing) .row-title, body.light:not(.playing) .gtitle { color: #171a21; }
+
+/* vitrin ve detay: görselin üstünde açık renk degrade */
+body.light:not(.playing) .hero-shade {
+  background: -webkit-linear-gradient(left, #f3f0eb 33%, rgba(243,240,235,.7) 58%, rgba(243,240,235,.05));
+  background: linear-gradient(to right, #f3f0eb 33%, rgba(243,240,235,.7) 58%, rgba(243,240,235,.05)); }
+body.light:not(.playing) .hero-shade:after { background: -webkit-linear-gradient(top, rgba(243,240,235,0), #f3f0eb); background: linear-gradient(to bottom, rgba(243,240,235,0), #f3f0eb); }
+body.light:not(.playing) .hero-title, body.light:not(.playing) .d-title { color: #171a21; text-shadow: none; }
+body.light:not(.playing) .hero-kind { color: #d35c00; }
+body.light:not(.playing) .hero-meta, body.light:not(.playing) .d-meta { color: #3a404c; }
+body.light:not(.playing) .hero-plot, body.light:not(.playing) .d-plot { color: #4a5160; }
+body.light:not(.playing) .d-shade {
+  background: -webkit-linear-gradient(left, #f3f0eb 38%, rgba(243,240,235,.85) 62%, rgba(243,240,235,.4));
+  background: linear-gradient(to right, #f3f0eb 38%, rgba(243,240,235,.85) 62%, rgba(243,240,235,.4)); }
+body.light:not(.playing) .d-orig, body.light:not(.playing) .d-credit { color: #5b6270; }
+body.light:not(.playing) .d-credit b { color: #171a21; }
+body.light:not(.playing) .d-rate { color: #c27a00; }
+body.light:not(.playing) .d-facts span { background: rgba(23,26,33,.08); color: #2a2f3a; }
+body.light:not(.playing) .d-ephead, body.light:not(.playing) .ep-num { color: #d35c00; }
+body.light:not(.playing) .ep-thumb { background: #e4ded5; }
+body.light:not(.playing) .ep-title { color: #4a5160; }
+body.light:not(.playing) .ep.focused .ep-title { color: #171a21; }
+body.light:not(.playing) .ep.focused .ep-thumb { box-shadow: 0 0 0 4px #171a21, 0 0 0 10px rgba(255,122,20,.5); }
+body.light:not(.playing) .d-prog { color: #4a5160; }
+
+/* filmler / diziler bilgi şeridi */
+body.light:not(.playing) .ginfo { background: rgba(255,255,255,.8); border-color: rgba(23,26,33,.06); }
+body.light:not(.playing) .gi-name { color: #171a21; }
+body.light:not(.playing) .gi-meta { color: #d35c00; }
+body.light:not(.playing) .gi-plot { color: #5b6270; }
+
+/* canlı TV ve geri izle */
+body.light:not(.playing) .ch-num { color: #8a919d; }
+body.light:not(.playing) .ch.focused .ch-num { color: #fff; }
+body.light:not(.playing) .ch-logo { background: rgba(23,26,33,.06); }
+body.light:not(.playing) .ch.sel { background: rgba(255,122,20,.12); }
+body.light:not(.playing) .ch-now { color: #6b7280; }
+body.light:not(.playing) .ch.focused .ch-now { color: #c9ced8; }
+body.light:not(.playing) .ch-prog { background: rgba(23,26,33,.1); }
+body.light:not(.playing) .ch.focused .ch-prog { background: rgba(255,255,255,.25); }
+body.light:not(.playing) .ch-arc { color: #d35c00; }
+body.light:not(.playing) .ch.focused .ch-arc { color: #ffb066; }
+body.light:not(.playing) .linfo { background: #fff; border-color: rgba(23,26,33,.06); box-shadow: 0 12px 34px rgba(23,26,33,.08); }
+body.light:not(.playing) .linfo-logo { background: rgba(23,26,33,.05); }
+body.light:not(.playing) .epg-item { border-top-color: rgba(23,26,33,.08); }
+body.light:not(.playing) .epg-time { color: #7a8291; }
+body.light:not(.playing) .epg-item.now .epg-time, body.light:not(.playing) .cu-time,
+body.light:not(.playing) .cu-row.now .cu-clock, body.light:not(.playing) .cu-row.now .ch-now { color: #d35c00; }
+body.light:not(.playing) .epg-desc, body.light:not(.playing) .cu-chan { color: #5b6270; }
+body.light:not(.playing) .cu-row .cu-clock { color: #5b6270; }
+body.light:not(.playing) .cu-row.focused .cu-clock { color: #fff; }
+body.light:not(.playing) .cu-badge { background: rgba(255,122,20,.14); color: #b04d00; }
+
+/* ayarlar */
+body.light:not(.playing) .set-row { background: #fff; border-color: rgba(23,26,33,.06); }
+body.light:not(.playing) .set-info { color: #4a5160; }
+body.light:not(.playing) .set-val { color: #7a8291; }
+body.light:not(.playing) .set-row.focused .set-val { color: #c9ced8; }
+body.light:not(.playing) .set-title { color: #d35c00; }
+body.light:not(.playing) .set-ver { color: #9aa1ad; }
+body.light:not(.playing) .set-row.danger { color: #d23b3b; }
+
+/* pencereler */
+body.light:not(.playing) .modal { background: rgba(23,26,33,.35); }
+body.light:not(.playing) .dialog, body.light:not(.playing) .kunye, body.light:not(.playing) .pin-box { background: #fff; color: #171a21; border-color: rgba(23,26,33,.06); box-shadow: 0 30px 80px rgba(23,26,33,.28); }
+body.light:not(.playing) .k-key, body.light:not(.playing) .pin-sub { color: #7a8291; }
+body.light:not(.playing) .k-val { color: #171a21; }
+body.light:not(.playing) .k-sub { color: #d35c00; }
+body.light:not(.playing) .k-cast span { background: rgba(23,26,33,.07); color: #2a2f3a; }
+body.light:not(.playing) .k-plot { color: #4a5160; }
+
+/* giriş */
+body.light:not(.playing) .login { background: #f3f0eb;
+  background: -webkit-radial-gradient(30% 20%, circle, #ffe1c4 0, #f3f0eb 55%); background: radial-gradient(circle at 30% 20%, #ffe1c4 0, #f3f0eb 55%); }
+body.light:not(.playing) .login-sub, body.light:not(.playing) .login-help { color: #5b6270; }
+body.light:not(.playing) .login-note { color: #9aa1ad; }
+body.light:not(.playing) .field { background: #fff; border-color: rgba(23,26,33,.08); }
+body.light:not(.playing) .field label { color: #7a8291; }
+body.light:not(.playing) .field input { color: #171a21; }
+body.light:not(.playing) .field.focused { background: #fff; border-color: #ff7a14; }
+body.light:not(.playing) .qr-title { color: #171a21; }
+body.light:not(.playing) .qr-steps { color: #4a5160; }
+
+/* profiller */
+body.light:not(.playing) .profiles { background: #f3f0eb; }
+body.light:not(.playing) .prof-name { color: #5b6270; }
+body.light:not(.playing) .prof.focused .prof-name, body.light:not(.playing) .prof.cur .prof-name { color: #171a21; }
+body.light:not(.playing) .prof.focused .avatar { box-shadow: 0 0 0 6px #171a21, 0 18px 44px rgba(23,26,33,.3); }
+body.light:not(.playing) .avatar.add-av { background: rgba(23,26,33,.05); border-color: rgba(23,26,33,.2); }
+body.light:not(.playing) .avatar.add-av span { color: #7a8291; }
+body.light:not(.playing) .prof-note { color: #7a8291; }
+
+/* alt ipucu, bildirim, yükleniyor */
+body.light:not(.playing) #hints { color: #6b7280;
+  background: -webkit-linear-gradient(top, rgba(243,240,235,0), rgba(243,240,235,.97) 55%); background: linear-gradient(to bottom, rgba(243,240,235,0), rgba(243,240,235,.97) 55%); }
+body.light:not(.playing) #toast { background: #171a21; color: #fff; }
+body.light:not(.playing) #loader { background: rgba(243,240,235,.9); }
+body.light:not(.playing) #loader-text { color: #2a2f3a; }

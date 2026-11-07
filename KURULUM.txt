@@ -1,0 +1,82 @@
+CEMFLIX - SAMSUNG TV'YE KURULUM
+================================
+
+Bu islemi yalnizca bir kez yapacaksiniz. Bundan sonraki guncellemelerde
+sadece KUR-Cemflix.bat dosyasina cift tiklamak yeterli.
+
+
+1) TIZEN STUDIO'YU KURUN (bilgisayara, yaklasik 10 dk)
+-------------------------------------------------------
+- https://developer.tizen.org/development/tizen-studio/download adresinden
+  "Tizen Studio ... with CLI" Windows yukleyicisini indirip kurun.
+  (Varsayilan klasor C:\tizen-studio olarak kalsin.)
+- Kurulum sonunda acilan "Package Manager" penceresinde:
+    * "Extension SDK" sekmesi > "Samsung Certificate Extension"  -> Install
+    * "Extension SDK" sekmesi > "TV Extensions-x.x"              -> Install
+
+
+2) TV'DE GELISTIRICI MODUNU ACIN
+--------------------------------
+- Bilgisayarinizin IP adresini ogrenin: Baslat > "cmd" > ipconfig yazin.
+  "IPv4 Adresi" satirindaki numarayi not edin (ornek 192.168.1.20).
+- TV'de "Uygulamalar" (Apps) ekranina gidin.
+- Kumandada sirayla 1 2 3 4 5 tuslarina basin. Acilmazsa kumandadaki
+  "123" tusuyla ekran klavyesini acip oradan tuslayin.
+- "Developer mode" -> On, "Host PC IP" -> bilgisayarinizin IP adresi.
+- TV'yi KAPATIP ACIN (fisten cekmenize gerek yok).
+- TV'nin IP adresi: Ayarlar > Genel > Ag > Ag Durumu > IP Ayarlari
+
+GELISTIRICI MODU ACILMAZSA
+--------------------------
+Bazi TV'lerde (ozellikle 2022 ve sonrasi) kumandayla 1 2 3 4 5 girince
+pencere hemen cikmayabilir. Sirayla deneyin:
+  1. "Uyg." sekmesindeyken kumandadaki "123" tusuyla ekran tus takimini
+     acip 1 2 3 4 5'i hizlica girin.
+  2. Bluetooth ya da USB klavye takip ust siradaki 1 2 3 4 5 tuslarina basin.
+  3. Telefondaki SmartThings uygulamasinin kumanda > 123 ekranindan girin.
+  4. TV'de Samsung hesabiyla oturum acin, fisi 10 sn cekip takin, TV acilir
+     acilmaz "Uyg." sekmesinde tekrar deneyin.
+  5. Olmazsa https://forum.developer.samsung.com adresinde model ve yazilim
+     surumunuzla birlikte sorun.
+
+ONEMLI - TV'yi TAM yeniden baslatin:
+  2022 ve sonrasi TV'lerde guc tusuna kisa basmak TV'yi sadece beklemeye
+  alir; gelistirici modu ayari uygulanmaz ve baglanti reddedilir.
+  Guc tusunu SAMSUNG logosu gorunene kadar basili tutun ya da fisi 30 sn
+  cekin. Ana ekran tamamen gelince KUR-Cemflix.bat'i calistirin.
+Not: Yeni TV'ler Samsung sertifikasi isteyebilir; asagidaki "SAMSUNG
+SERTIFIKASI" bolumune bakin (cogu zaman Tizen sertifikasi yeterli olur).
+
+
+3) KURUN
+--------
+- KUR-Cemflix.bat dosyasina cift tiklayin, TV'nin IP adresini yazin.
+- Windows "Kisisel bilgisayariniz korundu" derse:
+  "Ek bilgi" > "Yine de calistir".
+- Bitince Cemflix TV'de acilir ve Uygulamalar listesine eklenir.
+
+
+SAMSUNG SERTIFIKASI (yalnizca kurulum "sertifika/imza" hatasi verirse)
+----------------------------------------------------------------------
+Bazi Samsung TV'ler sadece Samsung'un verdigi sertifikayla imzalanmis
+uygulamalari kabul eder. Bu durumda:
+1. Tizen Studio'yu acin > Tools > Certificate Manager.
+2. "+" > "Samsung" > "TV" > yeni profil adi: cemflix-samsung
+3. "Create a new author certificate" > bilgileri doldurun.
+4. Samsung hesabinizla giris yapin (yoksa ucretsiz acin).
+5. Distributor sertifikasinda "Privilege: Public" secin.
+   TV'nin DUID'i, TV bagliysa otomatik eklenir. Degilse once
+   KUR-Cemflix.bat'i bir kez calistirip TV'ye baglanin.
+6. Bu klasorde "profil.txt" adinda bir dosya acin, icine sadece
+   cemflix-samsung
+   yazip kaydedin.
+7. KUR-Cemflix.bat'i tekrar calistirin.
+
+
+SORUN GIDERME
+-------------
+- "TV'ye baglanilamadi": TV ile bilgisayar ayni modeme bagli olmali.
+  Gelistirici modundaki "Host PC IP" bilgisayarinizin GUNCEL IP'si olmali.
+  IP degistiyse gelistirici modunda guncelleyip TV'yi kapatip acin.
+- Kurulum ciktisi bu klasordeki kurulum-log.txt dosyasina yazilir.
+- TV IP'si degisirse tv-ip.txt dosyasini silin.
